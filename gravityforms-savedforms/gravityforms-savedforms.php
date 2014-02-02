@@ -37,6 +37,7 @@
 
 			/* Form frontend logic */
 			add_filter( 'gform_pre_render', array( $this, 'try_restore_saved_state' ) );
+			add_filter( 'gform_next_button', array( $this, 'form_add_save_button'), null, 2 ); /* add save button next to Next button for multi page forms */
 			add_filter( 'gform_submit_button', array( $this, 'form_add_save_button'), null, 2 );
 			add_filter( 'gform_validation', array( $this, 'form_submit_save_autovalidate' ) );
 			add_filter( 'gform_confirmation', array( $this, 'form_save_confirmation' ), null, 4 );
